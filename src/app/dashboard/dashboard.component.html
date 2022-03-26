@@ -1,0 +1,99 @@
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <h2>Resturant Record App</h2>
+    <div class="d-flex">
+      <button (click)="clickAddRestorant()" class="btn btn-success" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">Add Record</button>
+      <button routerLink="/login" class="btn btn-danger mx-3">Log Out</button>
+    </div>
+  </div>
+</nav>
+<!-- Jumbotron -->
+<div class="p-5 mb-4 bg-light rounded-3">
+  <div class="container-fluid py-5">
+    <h1 class="display-5 fw-bold">Resturant Records Management</h1>
+    <p class="col-md-8 fs-4">You can save Records of Resturant using Angular 12</p>
+    <a class="btn btn-primary btn-lg" type="button" target="_blank" href="https://www.google.co.in">AboutUs</a>
+  </div>
+</div>
+<!--Close Jumbotron -->
+<!-- Create table -->
+<table class="table">
+  <thead>
+    <tr>
+      <th colspan="col">Id</th>
+      <th colspan="col">Name</th>
+      <th colspan="col">Email</th>
+      <th colspan="col">Mobile</th>
+      <th colspan="col">Address</th>
+      <th colspan="col">Services</th>
+      <th colspan="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of getAllResturantRecordsObj">
+      <td>{{item.id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.email}}</td>
+      <td>{{item.mobile}}</td>
+      <td>{{item.address}}</td>
+      <td>{{item.services}}</td>
+      <td>
+        <!-- <button class="btn btn-info" (click)="updateResturantRecord(item)">Edit</button> -->
+        <button class="btn btn-info" (click)="OnEditResturantRecord(item)" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">Edit</button>
+
+        &nbsp;
+        <button class="btn btn-danger" (click)="deleteResturantRecordbyId(item)">delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!-- End Create table -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" formControlName="name" class="form-control" placeholder="Returant Name"
+              id="exampleInputName1">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email address</label>
+            <input type="email" formControlName="email" class="form-control" placeholder="Email Id"
+              id="exampleInputEmail1">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Mobile</label>
+            <input type="text" formControlName="mobile" class="form-control" placeholder="Mobile Number"
+              id="exampleInputMobile1">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Address</label>
+            <input type="text" formControlName="address" class="form-control" placeholder="Address"
+              id="exampleInputAddress1">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Services</label>
+            <input type="text" formControlName="services" class="form-control" placeholder="Services"
+              id="exampleInputService1">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Clear</button>
+        <button *ngIf="Addbtn" type="button" class="btn btn-primary" (click)="addResturant()">Add Details</button>
+        <button *ngIf="Updatebtn" type="button" class="btn btn-primary" (click)="updateResturantRecord()">Update
+          Details</button>
+      </div>
+    </div>
+  </div>
+</div>
