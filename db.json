@@ -1,0 +1,33 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "name": "Naeem Ansari11",
+      "email": "a.alnaeem@gmail.com",
+      "mobile": "+919766531226",
+      "address": "Dargah Road",
+      "services": "Chai"
+    },
+    {
+      "id": 3,
+      "name": "Simnan Ansari",
+      "email": "a.alnaeem@gmail.com",
+      "mobile": "+919766531226",
+      "address": "Dargah Road",
+      "services": "Sirf Chai "
+    }
+  ],
+  "signup": [
+    {
+      "name": "Naeem Ansari",
+      "mobile": "+919766531226",
+      "email": "9766531226@google.com",
+      "password": "Naeem@123",
+      "id": 1
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

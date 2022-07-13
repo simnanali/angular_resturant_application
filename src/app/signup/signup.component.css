@@ -1,0 +1,10 @@
+.card {
+  margin: 10px;
+  border: 1px solid lightblue;
+  width: 550px;
+  padding: 45px;
+  position: absolute;
+  top: 5%;
+  left: 30%;
+
+}
